@@ -6,3 +6,9 @@
  
  
  Usage of Linked-list data structure of C language.
+ 
+ 
+ 1.Install Turbo C
+ 
+ 
+ 2.Run main.c
