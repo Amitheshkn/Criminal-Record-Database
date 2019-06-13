@@ -2,24 +2,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
-//#include<string.h>
-//#include<ctype.h>
-//#include<malloc.h>
 struct account {
 	int number;
-
 	char name[100];
-
 	char sex[100];
 	char dob[100];
 	char father_name[100];
 	char offense[100];
-    char blood_group[40];
-    float height;
-    float weight;
-    char under_section[50];
+   	char blood_group[40];
+    	float height;
+    	float weight;
+   	char under_section[50];
 	char date[100];
-	//char date1[100];
 struct account *next;
 struct account *prev;
 }customer;
@@ -27,7 +21,6 @@ struct account *head=NULL,*temp,*disp,*add,*trav,*del,*hnext,*hprev;
  long fileSize;
  int numEntries,loop;
  //for searching a client
-
  void PrintList(struct account *start)
 {
 	struct account *current = start;
@@ -51,25 +44,20 @@ struct account *head=NULL,*temp,*disp,*add,*trav,*del,*hnext,*hprev;
 	   printf("         date    :%s\n",current->date);
 	   printf("\n Press any key to continue\n");
 	   getchar();
-
-
 		current = current->next;
 		ahead   = NULL;
 		behind  = NULL;
 	}}
 
-
        void WriteListToNewFile(struct account *start)
    {
 	FILE *pt;
 	pt= fopen("pq.dat", "ab+");
-
 	if(pt != NULL)
 	{
 	trav=start;
 		hnext = NULL;
 		hprev = NULL;
-
 		while(trav != NULL)
 		 {
 			hnext = trav->next;
@@ -156,7 +144,6 @@ struct account *ReadNextFromFile(struct account *start, FILE *pF) {
 		return new;
 	}
 }
-
 struct account *ReadListIn(int choice)
  {
 
@@ -193,7 +180,7 @@ struct account *ReadListIn(int choice)
 		      {
 		   PrintList(start);
 		      }}}
-	  // }
+	
 	   if(choice==52)
 	   {
 	   printf("enter name\n");
@@ -292,17 +279,8 @@ struct account *ReadListIn(int choice)
 			start=ReadNextFromFile(start,pF);
 		       if(strcmp(start->name,nam)==0)
 		       {
-
-	//  printf("             item value: %.f\n",start->name);
-	//  printf("          token advance: %.f\n",start->name);
-	//  printf("     balance to be paid: %.f\n",start->name);
-	//  printf("enter the amount received at delivery time :");
-	//  fflush(stdin);
-	  scanf("%f",&customer.height);
-	 // start->height=start->weight;
-	 // start->height=start->weight;
-
-
+			       scanf("%f",&customer.height);
+	
 
        pF = fopen("pp.dat", "r+");
 	if(pF != NULL)
@@ -431,7 +409,6 @@ struct account *ReadListIn(int choice)
       }
 	 WriteListToFile(add);
 
-
     printf("\n Would you like to enter another criminal details(y\\n): \n");
     another = getchar();
     fflush(stdin);
@@ -492,6 +469,6 @@ exit(0);
 }}}
 else
 {
-printf("\n                        invalid password..enter again!\n");
+printf("\n  invalid password..enter again!\n");
 goto home;
 }}
